@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import { Float, OrbitControls } from '@react-three/drei'
