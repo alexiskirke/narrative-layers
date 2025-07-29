@@ -193,7 +193,7 @@ export default function SimpleHero() {
                    }}
                  >
                    {word}
-                   {wordIndex < 3 && (
+                   {wordIndex < 4 && (
                      <span style={{ 
                        backgroundImage: 'linear-gradient(45deg, #ff006e, #8338ec)',
                        WebkitBackgroundClip: 'text',
