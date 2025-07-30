@@ -391,11 +391,7 @@ export default function SimpleHero() {
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 126, 234, 0.1)',
-                    '&:focus': {
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(102, 126, 234, 0.3)',
-                      boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 30px rgba(102, 126, 234, 0.3)'
-                    }
+
                   }}
                   onFocus={(e) => {
                     e.target.style.background = 'rgba(255, 255, 255, 0.08)'
@@ -422,11 +418,7 @@ export default function SimpleHero() {
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 126, 234, 0.1)',
-                    '&:focus': {
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(102, 126, 234, 0.3)',
-                      boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 30px rgba(102, 126, 234, 0.3)'
-                    }
+
                   }}
                   onFocus={(e) => {
                     e.target.style.background = 'rgba(255, 255, 255, 0.08)'
@@ -658,11 +650,7 @@ export default function SimpleHero() {
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 126, 234, 0.1)',
-                    '&:focus': {
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(102, 126, 234, 0.3)',
-                      boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 30px rgba(102, 126, 234, 0.3)'
-                    }
+
                   }}
                   onFocus={(e) => {
                     e.target.style.background = 'rgba(255, 255, 255, 0.08)'
@@ -689,11 +677,7 @@ export default function SimpleHero() {
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 126, 234, 0.1)',
-                    '&:focus': {
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(102, 126, 234, 0.3)',
-                      boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 30px rgba(102, 126, 234, 0.3)'
-                    }
+
                   }}
                   onFocus={(e) => {
                     e.target.style.background = 'rgba(255, 255, 255, 0.08)'
