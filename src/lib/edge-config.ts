@@ -1,12 +1,20 @@
 import { get } from '@vercel/edge-config'
 
+// Type definitions for Edge Config data
+interface AuthConfig {
+  requireEmailVerification?: boolean
+  minPasswordLength?: number
+  allowSocialLogin?: boolean
+  maintenanceMode?: boolean
+}
+
 // Edge Config utility functions for authentication
 export class EdgeConfigAuth {
   
   // Check if registration is enabled
   static async isRegistrationEnabled(): Promise<boolean> {
     try {
-      const enabled = await get('registration_enabled')
+      const enabled = await get<boolean>('registration_enabled')
       return enabled === true
     } catch (error) {
       console.error('Error checking registration status:', error)
@@ -48,7 +56,7 @@ export class EdgeConfigAuth {
   // Get authentication configuration
   static async getAuthConfig() {
     try {
-      const config = await get('auth_config')
+      const config = await get<AuthConfig>('auth_config')
       return {
         requireEmailVerification: config?.requireEmailVerification ?? false,
         minPasswordLength: config?.minPasswordLength ?? 8,
