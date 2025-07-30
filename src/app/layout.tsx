@@ -4,12 +4,12 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 import CursorEffects from "@/components/ui/CursorEffects";
 
 export const metadata: Metadata = {
-  title: "narrative layers | where stories come alive",
+  title: "narrative layers | story will change the world",
   description: "experience the intersection of art, technology, and narrative. where stories come alive through motion.",
   keywords: ["narrative", "digital art", "interactive design", "motion graphics", "3D", "experience"],
   authors: [{ name: "narrative layers" }],
   openGraph: {
-    title: "narrative layers | where stories come alive",
+    title: "narrative layers | story will change the world",
     description: "experience the intersection of art, technology, and narrative.",
     type: "website",
   },
