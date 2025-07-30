@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { EdgeConfigAuth } from '@/lib/edge-config'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -67,9 +70,54 @@ async function handleRegister(data: {
     // Never log passwords!
   })
 
+  // Send welcome email
+  try {
+    if (process.env.RESEND_API_KEY) {
+      await resend.emails.send({
+        from: 'narrative layers <welcome@narrativelayers.com>',
+        to: data.email,
+        subject: 'Welcome to narrative layers! ✨',
+        html: `
+          <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #000000, #1a1a2e); color: white; padding: 40px; border-radius: 20px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+              <h1 style="font-size: 36px; font-weight: bold; background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">
+                narrative layers
+              </h1>
+              <p style="font-size: 18px; color: #cccccc; margin: 10px 0;">where stories come alive</p>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+              <h2 style="color: #f093fb; margin-top: 0;">Welcome ${data.name}! 🌟</h2>
+              <p style="font-size: 16px; line-height: 1.6; color: #e0e0e0;">
+                Thanks for joining narrative layers - the intersection of art, technology, and narrative.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; color: #e0e0e0;">
+                Your creative journey starts now. Get ready to experience stories like never before.
+              </p>
+              
+              <div style="margin: 30px 0; padding: 20px; background: rgba(102, 126, 234, 0.2); border-radius: 10px; border-left: 4px solid #667eea;">
+                <p style="margin: 0; font-style: italic; color: #b0c4ff;">
+                  "Every story has the power to change the world. Welcome to yours."
+                </p>
+              </div>
+              
+              <p style="font-size: 14px; color: #999999; margin-bottom: 0;">
+                Keep an eye out for updates as we build something extraordinary together.
+              </p>
+            </div>
+          </div>
+        `
+      })
+      console.log('Welcome email sent successfully')
+    }
+  } catch (emailError) {
+    console.error('Failed to send welcome email:', emailError)
+    // Don't fail registration if email fails
+  }
+
   return NextResponse.json({
     success: true,
-    message: 'Registration successful! Welcome to narrative layers.',
+    message: 'Registration successful! Welcome to narrative layers. Check your email for a welcome message.',
     user: {
       email: data.email,
       name: data.name
