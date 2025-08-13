@@ -228,33 +228,6 @@ export default function SimpleHero() {
         
                          {/* Interactive Buttons */}
         <div className="flex flex-col gap-6 justify-center items-center">
-          {/* Logline Generator Link */}
-          <button
-            onClick={() => setShowModal(true)}
-            className="group relative px-10 py-4 text-lg font-semibold text-white overflow-hidden rounded-full cursor-pointer no-underline"
-            style={{
-              background: 'rgba(102, 126, 234, 0.15)',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 0 25px rgba(102, 126, 234, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1)',
-              border: '2px solid rgba(102, 126, 234, 0.4)',
-              transform: 'translateZ(0)',
-              transition: 'all 0.3s ease',
-              textDecoration: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px) scale(1.03)'
-              e.currentTarget.style.background = 'rgba(102, 126, 234, 0.25)'
-              e.currentTarget.style.boxShadow = '0 8px 35px rgba(102, 126, 234, 0.7), inset 0 0 25px rgba(255, 255, 255, 0.15)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0) scale(1)'
-              e.currentTarget.style.background = 'rgba(102, 126, 234, 0.15)'
-              e.currentTarget.style.boxShadow = '0 0 25px rgba(102, 126, 234, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1)'
-            }}
-          >
-            <span className="relative z-10">Login / Register</span>
-          </button>
-          
           {/* Contact Link */}
           <a
             href="mailto:hello@narrativelayers.com"
